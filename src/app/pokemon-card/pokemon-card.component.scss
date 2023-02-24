@@ -1,0 +1,21 @@
+* {
+  margin: 0;  /*Tira os Espaços de margem*/
+  padding: 0; /*Tira o preenchimento interno*/
+  box-sizing: border-box; /*limita o tamanho da caixa, atua no padding, defini um tamanho fixo*/
+}
+
+.cardBody{
+  background-color: rgba(5, 5, 20, 0.243);
+  width: 22rem;
+  display: inline-block;
+  margin-left: 5rem;
+  margin-block: 5rem;
+  .image {
+    height: 10rem;
+  }
+  .description{
+    padding: 1.5rem;
+    color: yellow;
+    font-size: medium;
+  }
+}

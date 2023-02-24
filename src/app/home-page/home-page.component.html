@@ -1,0 +1,9 @@
+<div class="body">
+  <img src="./assets/pokeLogo.png" alt="" class="logo">
+
+  <app-pokemon-card [pokemons] = "pokemons" infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="500"
+  (scrolled)="onScroll()"></app-pokemon-card>
+
+</div>

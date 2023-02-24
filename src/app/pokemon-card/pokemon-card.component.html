@@ -1,0 +1,7 @@
+
+<div  *ngFor="let pokemon of pokemons,let i = index"
+class="cardBody">
+    <img src="{{sprite[i]}}" alt="{{ pokemon }}" class="image" (click)="playAudio(pokemon)">
+    <div class="description"> {{ pokemon}}</div>
+
+</div>

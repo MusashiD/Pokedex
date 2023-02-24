@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;  /*Tira os Espaços de margem*/
+  padding: 0; /*Tira o preenchimento interno*/
+  box-sizing: border-box; /*limita o tamanho da caixa, atua no padding, defini um tamanho fixo*/
+}
+
+:root {
+  font-size: 62.5%; /* 1rem = 10px */
+
+  --nav-height: 7.2rem;
+}
+
+html {
+  /* chrome://flags/#smooth-scrolling */
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'DM Sans';
+  font-size: 1.6rem;
+
+  text-align: center;
+
+  overflow: overlay;
+
+  background-color: rgb(18, 18, 20);
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
