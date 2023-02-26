@@ -20,4 +20,12 @@ export class LoadPokemonService {
     return this.pokemons;
     }
 
+    getPokemon(pokeName:String){
+      return this.http.get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
+    }
+
+    getPokemonSpecie(pokeName:String){
+      return this.http.get(`https://pokeapi.co/api/v2/pokemon-species/${pokeName}`)
+    }
+
 }

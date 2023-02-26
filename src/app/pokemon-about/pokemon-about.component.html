@@ -1,0 +1,44 @@
+<ng-template #elseBlock>
+  <div class="body" [style.background-color]="this.backgroundImageColor ">
+
+    <div class="pokemon">
+      <div class="pokeCard">
+
+        <div class="left">
+          <div class="header">
+            <h3>#{{pokemonBySpecie.pokedex_numbers[0].entry_number}}</h3>
+            <h1 class="name" >
+              {{pokemon.name}}
+              </h1>
+          </div>
+        </div>
+
+        <h1 class="nameJp">{{findJpName()}}</h1>
+
+        <div class="middle">
+          <img src="{{getImage()}}" alt="">
+          <div class="description" style="color:white"
+          >
+            {{getAbout()}}
+          </div>
+        </div>
+
+        <div class="right">
+          <div *ngFor=" let type of pokemon.types" class="pokeType">
+            <img  src="./assets/{{type.type.name}}Type.png" alt="">
+          </div>
+        <div class="stats" style="color:white">
+          <h3>Abilities: </h3>
+          <h2 *ngFor="let abilities of pokemon.abilities">{{abilities.ability.name}}</h2>
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+<div *ngIf="!backgroundImageColor; then thenBlock else elseBlock"></div>
+
+  <ng-template #thenBlock (click)="this.cdr.detectChanges()"><h1> carregando</h1></ng-template>

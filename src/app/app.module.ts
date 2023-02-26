@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { LoadPokemonService } from './services/load-pokemon.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,18 +9,21 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { PokemonAboutComponent } from './pokemon-about/pokemon-about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    PokemonCardComponent
+    PokemonCardComponent,
+    PokemonAboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    RouterModule
   ],
   providers: [LoadPokemonService],
   bootstrap: [AppComponent]
