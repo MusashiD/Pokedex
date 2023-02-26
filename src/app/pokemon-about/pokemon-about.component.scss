@@ -46,7 +46,16 @@
 
      }
      .right{
-      width: 10%;
+      width: 100%;
+      .pokeType{
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        justify-content: center;
+        img{
+          height: 3rem;
+        }
+      }
      }
 
     }

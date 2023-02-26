@@ -24,13 +24,14 @@
         </div>
 
         <div class="right">
-          <div *ngFor=" let type of pokemon.types" class="pokeType">
-            <img  src="./assets/{{type.type.name}}Type.png" alt="">
+          <div  class="pokeType">
+            <img  *ngFor=" let type of pokemon.types" src="./assets/{{type.type.name}}Type.png" alt="">
           </div>
         <div class="stats" style="color:white">
           <h3>Abilities: </h3>
           <h2 *ngFor="let abilities of pokemon.abilities">{{abilities.ability.name}}</h2>
         </div>
+        <app-tab-stats></app-tab-stats>
         </div>
 
       </div>

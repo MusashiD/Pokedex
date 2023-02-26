@@ -2,7 +2,7 @@ import { RouterModule } from '@angular/router';
 import { LoadPokemonService } from './services/load-pokemon.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {MatTabsModule} from '@angular/material/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -10,20 +10,25 @@ import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { PokemonAboutComponent } from './pokemon-about/pokemon-about.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TabStatsComponent } from './tab-stats/tab-stats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     PokemonCardComponent,
-    PokemonAboutComponent
+    PokemonAboutComponent,
+    TabStatsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     InfiniteScrollModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [LoadPokemonService],
   bootstrap: [AppComponent]
