@@ -1,63 +1,127 @@
-.body{
-  width: 100%;
-  height: 100%;
-  font-family: 'Tilt Neon', cursive;
+.body {
 
-  .pokemon{
-    width: 100%;
-    height: 100%;
-
-    .pokeCard{
-      width: 100%;
-      height: 100%;
+  .pokemon {
+    height: 100vh;
+    .pokeCard {
       display: flex;
+      height: 100%;
       flex-direction: row;
-      gap: 2rem;
-      padding-top: 7rem;
-      padding-left: 5.5rem;
+      gap: 4rem;
+      align-items: center;
+      justify-content: space-between;
 
       .left {
-
-        .header{
-          display: flex;
-          font-family: 'Tilt Neon', cursive;
-          font-weight: 400;
-          flex-direction: column;
-          gap: 1.7rem;
-          color:rgb(255, 251, 240);
-        }
-      }
-
-      .nameJp{
-        color: rgba(0, 0, 0, 0.577);
-        font-size: 10rem;
-        position: absolute;
-        margin-left: 9rem;
-        z-index: 2;
-        height: fit-content;
-        top: 16rem;
-      }
-     .middle{
-      width: 46%;;
-      .description{
-        width: fit-content;
-        font-size: 2.3rem;
-      }
-
-     }
-     .right{
-      width: 100%;
-      .pokeType{
+        width: 50%;
         display: flex;
-        flex-direction: row;
-        gap: 1.5rem;
+        flex-direction: column;
         justify-content: center;
-        img{
-          height: 3rem;
+        align-items: center;
+
+        .header {
+          display: flex;
+          flex-direction: column;
+
+          .pokeNumber {
+            color: white;
+            font-size: 3.2em;
+            padding-bottom: 2.4rem;
+          }
+
+          .name {
+            color: white;
+            font-size: 4vw;
+            padding-bottom: 1.2em;
+          }
+
+          .nameJp {
+            color: rgba(0, 0, 0, 0.39);
+            font-size: 6.8em;
+          }
+        }
+
+        img {
+          width: 45vh;
+          height: auto;
+          padding-bottom: 1em;
+        }
+
+        .description {
+          color: white;
+          font-size: 1.5em;
+          line-height: 1.5em;
+          width: fit-content;
         }
       }
-     }
 
+      .right {
+        width: 46%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        .pokeType {
+
+          img {
+            max-width: 100%;
+            height: auto;
+            margin-right: 0.8rem;
+          }
+        }
+
+        .stats {
+          color: white;
+          margin-top: 1rem;
+
+          h3 {
+            font-size: 2.8rem;
+          }
+          .abilities{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            h2 {
+              font-size: 2.2rem;
+            }
+          }
+
+        }
+
+        .tabs {
+          margin-top: 1.6rem;
+          display: inline-block;
+        }
+
+        .pokeNumbers{
+          rotate: 90deg;
+          font-size:2.2rem;
+          height: fit-content;
+          background-color: rgba(245, 237, 237, 0.09);
+          margin-left: 7rem;
+          width: 65%;
+          position: relative;
+          right: -20.1rem;
+          top: -15.8rem;
+          border-radius: 1rem;
+          color:white;
+        }
+      }
     }
   }
+}
+
+// Bloco condicional
+$backgroundImageColor: #FFF; // Definir a cor de fundo padrão
+div[ngIf] {
+  display: none;
+
+  &.ng-tns-c10-1 {
+    display: block;
+  }
+}
+
+// Bloco de carregamento
+h1 {
+  font-size: 2.4rem;
 }

@@ -12,6 +12,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { PokemonAboutComponent } from './pokemon-about/pokemon-about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabStatsComponent } from './tab-stats/tab-stats.component';
+import { MatTabGroupComponent } from './mat-tab-group/mat-tab-group.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TabStatsComponent } from './tab-stats/tab-stats.component';
     HomePageComponent,
     PokemonCardComponent,
     PokemonAboutComponent,
-    TabStatsComponent
+    TabStatsComponent,
+    MatTabGroupComponent
   ],
   imports: [
     BrowserModule,

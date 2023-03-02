@@ -1,9 +1,10 @@
 import { LoadPokemonService } from './../services/load-pokemon.service';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import {getColorFromURL} from 'color-thief-node';
 import * as ColorThief from 'color-thief-node';
 import { bindCallback } from 'rxjs';
+import { MatTabGroup } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-pokemon-about',
@@ -17,12 +18,15 @@ export class PokemonAboutComponent implements OnInit {
   backgroundImageColor:any;
   constructor(private route: ActivatedRoute,
     private loadPokemon : LoadPokemonService,
-    private cdr:  ChangeDetectorRef ) { }
+    private cdr:  ChangeDetectorRef,
+    private router: Router ) { }
+
 
   ngOnInit() {
     const pokemonName = this.route.snapshot.params['pokemon'];
     this.getPokemon(pokemonName)
   }
+
 
   getPokemon(pokemonName:string){
     this.loadPokemon.getPokemon(pokemonName).subscribe({
@@ -99,7 +103,5 @@ export class PokemonAboutComponent implements OnInit {
     const jpName = entry ? entry.name: '';
     return jpName;
   }
-
-
 
 }

@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class LoadPokemonService {
   pokemons: any = [];
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private router:Router) {
    }
 
    async getPokemons(length:any,start:any) {
@@ -26,6 +27,15 @@ export class LoadPokemonService {
 
     getPokemonSpecie(pokeName:String){
       return this.http.get(`https://pokeapi.co/api/v2/pokemon-species/${pokeName}`)
+    }
+
+    redirecionaPoke(pokeNameIndex:string){
+      if(pokeNameIndex.length > 0){
+        let name:String = pokeNameIndex;
+        this.router.navigate(['/', name]).then(nav => {
+          window.location.reload();
+    });;
+      }
     }
 
 }
