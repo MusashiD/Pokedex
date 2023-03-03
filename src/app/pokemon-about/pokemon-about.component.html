@@ -1,14 +1,13 @@
 <ng-template #elseBlock>
   <div class="body" [style.background-color]="this.backgroundImageColor ">
 
-    <div class="pokemon">
+    <div class="pokemon" style="position:relative ; z-index: index 3;">
       <div class="pokeCard">
 
         <div class="left">
           <div class="header">
-            <h3 class="pokeNumber">#{{pokemonBySpecie.pokedex_numbers[0].entry_number}}</h3>
             <h1 class="name" >
-              {{pokemon.name}}
+              <h3 class="pokeNumber">#{{pokemonBySpecie.pokedex_numbers[0].entry_number}}</h3>{{pokemon.name}}
               </h1>
               <h1 class="nameJp">{{findJpName()}}</h1>
           </div>
@@ -23,19 +22,14 @@
         <div class="right">
           <div  class="pokeType">
             <img  *ngFor=" let type of pokemon.types" src="./assets/{{type.type.name}}Type.png" alt="">
+            <div class="stats" style="color:white">
+              <h3>Abilities: </h3>
+              <div class="abilities">
+                <h2 *ngFor="let abilities of pokemon.abilities">
+                  {{abilities.ability.name}}</h2>
+              </div>
+                </div>
           </div>
-        <div class="stats" style="color:white">
-          <h3>Abilities: </h3>
-          <div class="abilities">
-            <h2 *ngFor="let abilities of pokemon.abilities">
-              {{abilities.ability.name}}</h2></div>
-
-        </div>
-        <div class="tabs">
-          <app-tab-stats style="width:20%"></app-tab-stats>
-        </div>
-
-        <app-mat-tab-group #tabGroup class="pokeNumbers" [pokeIndex]="pokemonBySpecie.pokedex_numbers[0].entry_number"></app-mat-tab-group>
         </div>
 
       </div>
