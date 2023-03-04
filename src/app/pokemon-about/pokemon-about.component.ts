@@ -273,14 +273,14 @@ export class PokemonAboutComponent implements OnInit {
     getImg0(){
       for (let i = 0; i < this.arrayDamage.length; i++) {
         if (this.arrayDamage[i].value == 0) {
-          this.img0[i] = `../../assets/typesCircle/${this.arrayDamage[i].name}.png`;
+          this.img0[i] = `./assets/typesCircle/${this.arrayDamage[i].name}.png`;
         }
     }
   }
     getImg025(){
       for (let i = 0; i < this.arrayDamage.length; i++) {
         if (this.arrayDamage[i].value == 0.25) {
-          this.img025[i] = `../../assets/typesCircle/${this.arrayDamage[i].name}.png`;
+          this.img025[i] = `./assets/typesCircle/${this.arrayDamage[i].name}.png`;
         }
     }
   }
@@ -288,7 +288,7 @@ export class PokemonAboutComponent implements OnInit {
     getImg05(){
       for (let i = 0; i < this.arrayDamage.length; i++) {
         if (this.arrayDamage[i].value == 0.5) {
-          this.img05[i] = `../../assets/typesCircle/${this.arrayDamage[i].name}.png`;
+          this.img05[i] = `./assets/typesCircle/${this.arrayDamage[i].name}.png`;
         }
       }
     }
@@ -296,14 +296,14 @@ export class PokemonAboutComponent implements OnInit {
     getImg2(){
       for (let i = 0; i < this.arrayDamage.length; i++) {
         if (this.arrayDamage[i].value == 2) {
-          this.img2[i] = `../../assets/typesCircle/${this.arrayDamage[i].name}.png`;
+          this.img2[i] = `./assets/typesCircle/${this.arrayDamage[i].name}.png`;
         }
       }
     }
     getImg4(){
       for (let i = 0; i < this.arrayDamage.length; i++) {
         if (this.arrayDamage[i].value == 4) {
-          this.img4[i] = `../../assets/typesCircle/${this.arrayDamage[i].name}.png`;
+          this.img4[i] = `./assets/typesCircle/${this.arrayDamage[i].name}.png`;
         }
       }
     }
