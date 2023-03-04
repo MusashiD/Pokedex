@@ -5,7 +5,9 @@
   padding: 0; /*Tira o preenchimento interno*/
   box-sizing: border-box; /*limita o tamanho da caixa, atua no padding, defini um tamanho fixo*/
 }
-
+h1,h2,h3{
+  margin: 0;
+}
 :root {
     --hue: 190;
     --fire-gradient:rgb(151, 76, 30) 0%, rgb(231, 118, 37) 35%, rgb(233, 117, 22) 96%;
