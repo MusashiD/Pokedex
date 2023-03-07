@@ -1,0 +1,9 @@
+
+<div class="bars" *ngIf="pokemon">
+    <mat-progress-bar class="bar" [color]="'accent'"
+     *ngFor ="let stats of pokemon.stats" 
+     mode="determinate" 
+     [value]="stats.base_stat"
+     >
+    </mat-progress-bar>
+</div>

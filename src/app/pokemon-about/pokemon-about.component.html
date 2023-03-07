@@ -18,25 +18,29 @@
         </div>
 
         <div class="right">
-          <div class="about">
-            <ul>
-              <li style="font-weight: bold;">Height: <span style="font-weight: lighter;"> {{pokemon.height/10}}m </span> </li>
-              <li style="font-weight: bold;">Weight: <span style="font-weight: lighter;" > {{pokemon.weight/10}}kg  </span> </li>
-              <li style="font-weight: bold;">Abilities: <span style="font-weight: lighter;" *ngFor="let abilities of pokemon.abilities"> {{abilities.ability.name}} </span> </li>
-              <li style="font-weight: bold;">Type : <img  class="typeImg" *ngFor=" let type of pokemon.types" src="./assets/{{type.type.name}}Type.png" alt=""> </li>
-            </ul>
-          </div>
+          <div class="rightTop">
+            <div class="about">
+              <ul>
+                <li style="font-weight: bold;">Height: <span style="font-weight: lighter;"> {{pokemon.height/10}}m </span> </li>
+                <li style="font-weight: bold;">Weight: <span style="font-weight: lighter;" > {{pokemon.weight/10}}kg  </span> </li>
+                <li style="font-weight: bold;">Abilities: <span style="font-weight: lighter;" *ngFor="let abilities of pokemon.abilities"> {{abilities.ability.name}} </span> </li>
+                <li style="font-weight: bold;">Type : <img  class="typeImg" *ngFor=" let type of pokemon.types" src="./assets/{{type.type.name}}Type.png" alt=""> </li>
+              </ul>
+            </div>
+  
+            <div class="damage">
+              <h1 style="color:white;">Typing</h1>
+              <ul *ngIf="!!arrayDamage">
+                <li>0x <div class="damageImg"> <img *ngFor="let img of img0" src="{{img}}" alt=""> </div></li>
+                <li>0.25x <div class="damageImg"> <img *ngFor="let img25 of img025" src="{{img25}}" alt=""> </div></li>
+                <li>0.5x  <div class="damageImg"> <img *ngFor="let img5 of img05" src="{{img5}}" alt=""> </div></li>
+                <li>2x   <div class="damageImg"> <img *ngFor="let img02 of img2" src="{{img02}}" alt=""> </div></li>
+                <li style="border:none;">4x  <div class="damageImg">  <img *ngFor="let img04 of img4" src="{{img04}}" alt=""> </div></li>
+              </ul>
+            </div>
 
-          <div class="damage">
-            <ul *ngIf="!!arrayDamage">
-              <li>0x <div class="damageImg"> <img *ngFor="let img of img0" src="{{img}}" alt=""> </div></li>
-              <li>0.25x <div class="damageImg"> <img *ngFor="let img25 of img025" src="{{img25}}" alt=""> </div></li>
-              <li>0.5x  <div class="damageImg"> <img *ngFor="let img5 of img05" src="{{img5}}" alt=""> </div></li>
-              <li>2x   <div class="damageImg"> <img *ngFor="let img02 of img2" src="{{img02}}" alt=""> </div></li>
-              <li style="border:none;">4x  <div class="damageImg">  <img *ngFor="let img04 of img4" src="{{img04}}" alt=""> </div></li>
-            </ul>
           </div>
-
+          
           <h1 class="evoTitle" *ngIf="pokeChain">Evolution Chain</h1>
           <div class="evoChain" *ngIf="pokeChain">
             <div class="evo" *ngFor="let poke of pokeByChainSpecies , let i = index"  >
@@ -52,14 +56,18 @@
                src="./assets/seta-direita.png" alt="" *ngIf="verificaSeta(i,pokeByChainSpecies.length-1)" >
 
             </div>
+            
           </div>
+
+
         </div>
 
       </div>
+      
   </div>
 </ng-template>
 
 
-<div *ngIf="!backgroundImageColor ; then thenBlock else elseBlock"></div>
+<div *ngIf="isLoading  ; then thenBlock else elseBlock"></div>
 
   <ng-template #thenBlock ><h1> carregando</h1></ng-template>

@@ -13,6 +13,8 @@ import { PokemonAboutComponent } from './pokemon-about/pokemon-about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabStatsComponent } from './tab-stats/tab-stats.component';
 import { MatTabGroupComponent } from './mat-tab-group/mat-tab-group.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { PokeStatusComponent } from './poke-status/poke-status.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { MatTabGroupComponent } from './mat-tab-group/mat-tab-group.component';
     PokemonCardComponent,
     PokemonAboutComponent,
     TabStatsComponent,
-    MatTabGroupComponent
+    MatTabGroupComponent,
+    PokeStatusComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { MatTabGroupComponent } from './mat-tab-group/mat-tab-group.component';
     InfiniteScrollModule,
     RouterModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatProgressBarModule
   ],
   providers: [LoadPokemonService],
   bootstrap: [AppComponent]

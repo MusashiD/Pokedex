@@ -13,7 +13,7 @@ import { MatTabGroup } from '@angular/material/tabs';
 })
 
 export class PokemonAboutComponent implements OnInit {
-  pokemon:any = {}
+  pokemon:any;
   pokemonBySpecie:any = {};
   backgroundImageColor:any;
   pokeChain:any;
@@ -25,7 +25,7 @@ export class PokemonAboutComponent implements OnInit {
   img05:any = []
   img2:any = []
   img4:any = []
-
+  isLoading = true;
   names:any = [];
 
   constructor(private route: ActivatedRoute,
@@ -43,6 +43,7 @@ export class PokemonAboutComponent implements OnInit {
   getPokemon(pokemonName:string){
     this.loadPokemon.getPokemon(pokemonName).subscribe({
       next: (res) =>{
+        this.pokemon = [];
         this.pokemon = res;
         this.getTypingRelation();
         this.getPokemonSpecie(pokemonName);
@@ -60,21 +61,13 @@ export class PokemonAboutComponent implements OnInit {
         this.pokeChain = await this.loadPokemon.getEvolutionChain(this.pokemonBySpecie);
         this.pokeSpecieEvo()
         this.getBackgroundImage()
+        this.isLoading  = false;
       },
       error: (error) => {
         console.log(error);
       }
   });
     }
-
-    getAbility(arg0: any) {
-      console.log("entrou1")
-            }
-
-      getGeneration(arg0: any) {
-        console.log("entrou@")
-      }
-
       getImage(){
         console.log(this.pokemon.sprites.other['official-artwork'].front_default
         )
@@ -266,7 +259,6 @@ export class PokemonAboutComponent implements OnInit {
        this.getImg05()
        this.getImg2()
        this.getImg4()
-
     
   }
 
@@ -307,6 +299,7 @@ export class PokemonAboutComponent implements OnInit {
         }
       }
     }
+
       
       
 }
